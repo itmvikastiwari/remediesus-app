@@ -1,7 +1,7 @@
 {
   "angularJSSuffix": "mySuffix",
   "applications": ["bengalRemedies"],
-  "changelogDate": "20230111200632",
+  "changelogDate": "20230111200750",
   "dto": "mapstruct",
   "embedded": false,
   "entityTableName": "address",
