@@ -1,0 +1,210 @@
+
+application {
+  config {
+    baseName bengalRemedies
+    applicationType monolith
+    serverPort 8080
+    buildTool maven
+  }
+  entities *
+  dto * with mapstruct
+  service * with serviceClass
+}
+
+// an ignored comment
+/** not an ignored comment */
+
+entity Address {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String,
+    lat Double,
+    long Double,
+}
+
+/**
+ * The Customer Information.
+ */
+entity Customer {
+	firstName String required,
+	lastName String,
+	email String,
+	phoneNumber String,
+    image String,
+    status Status,     //Potential or Onboarded
+    customerStatus CustomerStatus,     //Potential or Onboarded
+    convertedDate Instant, //This is First billing date
+    dues Double,
+    dueDate Instant,
+    lastVisited Instant,
+    division String,
+    createdAt Instant,
+    updatedAt Instant,
+    dob Instant,
+    anniversarry Instant,
+    documents String, //This is list of documents links
+    contactPerson String,
+    loanLicence Boolean
+}
+
+relationship OneToOne {
+	Address{address} to Customer
+}
+
+
+entity Tour {
+	startDate Instant required,
+	endDate Instant required,
+	district String, //this will be a list 
+    cost Double,
+    sale String, //This is comment on tour
+    //party Customer, //This will be list of customers
+}
+
+relationship OneToMany {
+	Customer{party} to Tour
+}
+
+/**
+ * The User entity.
+ */
+entity User {
+	firstName String required,
+	lastName String,
+	email String,
+	phoneNumber String,
+    image String,
+    status Status,
+    createdAt Instant,
+    updatedAt Instant,
+    password String,
+    designation String,
+    role Role required,
+    
+}
+
+/**
+ * The Plan weekly entity.
+ */
+entity Plan {
+	startDate Instant required,
+	endDate Instant required,
+	week Integer required,
+    days Integer,
+	managerId String required,
+    saleRepId String required,
+    status Status,
+    targetValue Double,
+    noOfOrder Integer,
+    orderValue Double,
+    newCustomer Integer,
+    createdAt Instant,
+    updatedAt Instant
+}
+/**
+ * Plan day will be a day row for a plan week, this will be created by manager
+ */
+entity PlanDay{
+	date Instant required,
+    district String, //This will a list of district 
+    place String
+}
+
+/**
+ * This will be updated by Sale reps
+ */
+entity PlanDayExecution {
+	isPresent Boolean,
+	noOfOrder Integer,
+    orderValue Double,
+    newCustomer Integer,
+    tada Double,
+    tadaDocuments String,  //This will a list of documents 
+    createdAt Instant,
+    updatedAt Instant,
+}
+
+/**
+ * Sale reps can add more places and images for an plan execution day.
+ */
+entity PlanDayExecutionPlace {
+	district String,
+	//place Address,
+    images String
+}
+
+relationship OneToMany {
+	PlanDayExecutionPlace{place} to Address
+}
+
+/**
+ * User Leave Information
+ */
+entity UserLeaveLogs {
+	startDate Instant,
+    endDate Instant,
+    noOfDays Integer
+}
+
+entity UserLeave {
+	totalLeave Double,
+    leaveBalance Double
+}
+
+relationship OneToOne {
+	UserLeave{user} to User
+}
+
+relationship OneToMany {
+	UserLeaveLogs{user} to User
+}
+
+//User Roles
+enum Role {
+    SUPER_ADMIN, ADMIN, MANAGER, SALE_REPRESENTATIVE
+}
+
+//Entity States
+enum Status {
+    NEW, ACTIVE, DELETED, ARCHIVED, LOCKED
+}
+
+enum CustomerStatus{
+	POTENTIAL, ONBOARDED
+}
+relationship OneToMany {
+	PlanDay{plan} to Plan
+}
+
+relationship OneToOne {
+	PlanDay{plan} to Plan
+}
+
+relationship OneToOne {
+	PlanDayExecutionPlace{place} to Address
+}
+
+relationship OneToOne {
+	Plan{saleRep} to User
+}
+
+relationship OneToOne {
+	PlanDayExecution{planDay} to PlanDay
+}
+relationship OneToMany {
+	PlanDayExecutionPlace{planDayExecution} to PlanDayExecution
+}
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+//service all with serviceImpl
+dto * with mapstruct
+service all with serviceImpl
+
+
+// Set an angular suffix
+angularSuffix * with mySuffix
+
