@@ -29,7 +29,6 @@
       "relationshipType": "one-to-one"
     },
     {
-
       "otherEntityName": "address",
       "relationshipName": "place",
       "relationshipType": "many-to-one"
