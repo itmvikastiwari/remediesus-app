@@ -133,9 +133,9 @@ entity PlanDayExecutionPlace {
     images String
 }
 
-//relationship OneToMany {
-//	PlanDayExecutionPlace{place} to Address
-//}
+relationship ManyToOne {
+	PlanDayExecutionPlace{place} to Address
+}
 
 /**
  * User Leave Information
