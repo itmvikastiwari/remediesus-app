@@ -1,6 +1,6 @@
 package com.remediesus;
 
-import com.remediesus.RemediesusApp;
+import com.remediesus.BengalRemediesApp;
 import com.remediesus.config.AsyncSyncConfiguration;
 import com.remediesus.config.EmbeddedMongo;
 import java.lang.annotation.ElementType;
@@ -15,7 +15,7 @@ import org.springframework.test.annotation.DirtiesContext;
  */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@SpringBootTest(classes = { RemediesusApp.class, AsyncSyncConfiguration.class })
+@SpringBootTest(classes = { BengalRemediesApp.class, AsyncSyncConfiguration.class })
 @EmbeddedMongo
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

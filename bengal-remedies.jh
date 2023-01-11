@@ -3,16 +3,25 @@ application {
   config {
     baseName bengalRemedies
     applicationType monolith
+    databaseType mongodb
     serverPort 8080
     buildTool maven
+    authenticationType jwt
+    packageName com.remediesus
+    clientFramework angular
+    clientPackageManager npm
   }
-  entities *
+  entities * except A
   dto * with mapstruct
   service * with serviceClass
+  
 }
 
 // an ignored comment
 /** not an ignored comment */
+entity A{
+
+}
 
 entity Address {
 	streetAddress String,
@@ -200,9 +209,8 @@ relationship ManyToOne {
 
 // Set service options to all except few
 //service all with serviceImpl
-dto * with mapstruct
+dto all with mapstruct
 service all with serviceImpl
-
 
 // Set an angular suffix
 angularSuffix * with mySuffix

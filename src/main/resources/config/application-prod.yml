@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.mycompany.myapp: INFO
+    com.remediesus: INFO
 
 management:
   metrics:
@@ -31,19 +31,10 @@ spring:
       enabled: false
     livereload:
       enabled: false
-  datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/bengalRemedies
-    username: bengalRemedies
-    password:
-    hikari:
-      poolName: Hikari
-      auto-commit: false
-  jpa:
-    database-platform: tech.jhipster.domain.util.FixedPostgreSQL10Dialect
-  # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
-  liquibase:
-    contexts: prod
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: bengalRemedies
   mail:
     host: localhost
     port: 25
