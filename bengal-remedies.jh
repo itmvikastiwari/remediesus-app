@@ -62,7 +62,7 @@ entity Tour {
     //party Customer, //This will be list of customers
 }
 
-relationship OneToMany {
+relationship ManyToOne {
 	Customer{party} to Tour
 }
 
@@ -155,7 +155,7 @@ relationship OneToOne {
 	UserLeave{user} to User
 }
 
-relationship OneToMany {
+relationship ManyToOne {
 	UserLeaveLogs{user} to User
 }
 
@@ -172,7 +172,7 @@ enum Status {
 enum CustomerStatus{
 	POTENTIAL, ONBOARDED
 }
-relationship OneToMany {
+relationship ManyToOne {
 	PlanDay{plan} to Plan
 }
 
@@ -189,9 +189,9 @@ relationship OneToOne {
 }
 
 relationship OneToOne {
-	PlanDayExecution{planDay} to PlanDay
+	PlanDayExecution{planDay} to PlanDay{planDayExecution}
 }
-relationship OneToMany {
+relationship ManyToOne {
 	PlanDayExecutionPlace{planDayExecution} to PlanDayExecution
 }
 

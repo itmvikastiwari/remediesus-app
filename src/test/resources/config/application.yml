@@ -13,17 +13,12 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-mongock:
-  migration-scan-package:
-    - com.remediesus.config.dbmigrations
-  mongo-db:
-    read-concern: local
-    write-concern:
-      journal: false
-
 spring:
   application:
-    name: remediesus
+    name: bengalRemedies
+  # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
+  liquibase:
+    contexts: test
   jackson:
     serialization:
       write-durations-as-timestamps: false
@@ -38,13 +33,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: remediesus-task-
+      thread-name-prefix: bengal-remedies-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: remediesus-scheduling-
+      thread-name-prefix: bengal-remedies-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -61,9 +56,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'remediesusApp'
+    name: 'bengalRemediesApp'
   mail:
-    from: remediesus@localhost.com
+    from: bengalRemedies@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
