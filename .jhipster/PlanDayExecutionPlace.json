@@ -29,6 +29,11 @@
       "relationshipType": "one-to-one"
     },
     {
+      "otherEntityName": "address",
+      "relationshipName": "place",
+      "relationshipType": "many-to-one"
+    },
+    {
       "otherEntityName": "planDayExecution",
       "relationshipName": "planDayExecution",
       "relationshipType": "many-to-one"
