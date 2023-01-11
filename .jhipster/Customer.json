@@ -1,0 +1,103 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200633",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "customer",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW,ACTIVE,DELETED,ARCHIVED,LOCKED"
+    },
+    {
+      "fieldName": "customerStatus",
+      "fieldType": "CustomerStatus",
+      "fieldValues": "POTENTIAL,ONBOARDED"
+    },
+    {
+      "fieldName": "convertedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dues",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "dueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastVisited",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "division",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "anniversarry",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "documents",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactPerson",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "loanLicence",
+      "fieldType": "Boolean"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "The Customer Information.",
+  "jpaMetamodelFiltering": false,
+  "name": "Customer",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "tour",
+      "relationshipName": "party",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

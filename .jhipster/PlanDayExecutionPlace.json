@@ -1,0 +1,38 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200638",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "plan_day_execution_place",
+  "fields": [
+    {
+      "fieldName": "district",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "images",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Sale reps can add more places and images for an plan execution day.",
+  "jpaMetamodelFiltering": false,
+  "name": "PlanDayExecutionPlace",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "address",
+      "ownerSide": true,
+      "relationshipName": "place",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "planDayExecution",
+      "relationshipName": "planDayExecution",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

@@ -1,0 +1,50 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200636",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "plan_day",
+  "fields": [
+    {
+      "fieldName": "date",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "district",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "place",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "Plan day will be a day row for a plan week, this will be created by manager",
+  "jpaMetamodelFiltering": false,
+  "name": "PlanDay",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "plan",
+      "ownerSide": true,
+      "relationshipName": "plan",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "plan",
+      "relationshipName": "plan",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "planDayExecution",
+      "otherEntityRelationshipName": "planDay",
+      "ownerSide": false,
+      "relationshipName": "planDayExecution",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

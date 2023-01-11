@@ -1,0 +1,83 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200635",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "plan",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "week",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "days",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "managerId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "saleRepId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "NEW,ACTIVE,DELETED,ARCHIVED,LOCKED"
+    },
+    {
+      "fieldName": "targetValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "noOfOrder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "newCustomer",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "The Plan weekly entity.",
+  "jpaMetamodelFiltering": false,
+  "name": "Plan",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "ownerSide": true,
+      "relationshipName": "saleRep",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

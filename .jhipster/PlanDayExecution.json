@@ -1,0 +1,58 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200637",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "plan_day_execution",
+  "fields": [
+    {
+      "fieldName": "isPresent",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "noOfOrder",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "orderValue",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "newCustomer",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "tada",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "tadaDocuments",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdAt",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "updatedAt",
+      "fieldType": "Instant"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "This will be updated by Sale reps",
+  "jpaMetamodelFiltering": false,
+  "name": "PlanDayExecution",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "planDay",
+      "otherEntityRelationshipName": "planDayExecution",
+      "ownerSide": true,
+      "relationshipName": "planDay",
+      "relationshipType": "one-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}
