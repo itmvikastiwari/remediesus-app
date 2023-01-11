@@ -1,0 +1,36 @@
+{
+  "angularJSSuffix": "mySuffix",
+  "applications": ["bengalRemedies"],
+  "changelogDate": "20230111200757",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "user_leave_logs",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "noOfDays",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "User Leave Information",
+  "jpaMetamodelFiltering": false,
+  "name": "UserLeaveLogs",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "relationshipName": "user",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

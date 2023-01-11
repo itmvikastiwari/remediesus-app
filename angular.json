@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "remediesus": {
+    "bengal-remedies": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -76,15 +76,15 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "remediesus:build:development",
+            "browserTarget": "bengal-remedies:build:development",
             "port": 4200
           },
           "configurations": {
             "production": {
-              "browserTarget": "remediesus:build:production"
+              "browserTarget": "bengal-remedies:build:production"
             },
             "development": {
-              "browserTarget": "remediesus:build:development"
+              "browserTarget": "bengal-remedies:build:development"
             }
           },
           "defaultConfiguration": "development"
